@@ -8,6 +8,13 @@ package operacionesaritmeticas;
  *
  * @author erickson.vergara
  */
-public class Relacionales {
-    
+public class Booleanos {
+    public static void main(String[] args) {
+        int x = 0;
+        int y = 2;
+        
+        boolean b = (x != 0) && ((y / x) != 0);
+        
+        System.out.println(b);
+    }
 }
