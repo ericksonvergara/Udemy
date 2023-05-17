@@ -63,6 +63,49 @@ public class OperacionesStrings {
         
         char letraExtraida = "Argentina".charAt(3);
         System.out.println("La letra contenida dentro del indice 3 es: " + letraExtraida);
-             
+        
+        //Determinar si una poprción de una cadena esta dentro de otra cadena
+        String mensaje2 = "Hola Dev!";
+        boolean contienePlabara = mensaje2.contains("Dev");
+        System.out.println("La cadena de caracteres contiene 'Dev' ? :"+ contienePlabara);
+        
+        //Determinar si una cadena empeza con un valor especificado
+        String favorito = "Java es mi lenguaje favorito";
+        boolean esFavorito = favorito.startsWith("Java");
+        System.out.println("Java es mi lenguaje favorito: " + esFavorito);
+        
+        String noFavorito = "Java es mi lenguaje favorito";
+        boolean noEsFavorito = favorito.startsWith("C++");
+        System.out.println("Java es mi lenguaje favorito: " + noEsFavorito);
+        
+        //Determina si una cadena termina con algun valor especificado
+        String optimo = "Uno de los lenguajes mas óptimos es C++";
+        boolean esOptimo = optimo.endsWith("C++");
+        System.out.println("C++ es uno de los lenguales mas optimos: " + esOptimo );
+        
+        //La cadena esta Vacía
+        System.out.println("La cadena está vacía? " + "".isEmpty());
+        
+        //Reemplazar el contenido de un caracter por otro usando replace.
+        String cadenaAReemplazar = "La ley de la relatividad fue publicada por pascal";
+        String cadenaReemplazada = cadenaAReemplazar.replace("pascal", "Einstein");
+        System.out.println(cadenaAReemplazar + "\nvamos a reemplazar el nombre del cientifico de la oracion el cual esta 'pascal' por: \n"+ cadenaReemplazada);
+        
+        //Remover los espacios en blanco usando strip()
+        String cadenaConEspacioEnBlanco = "       Mi nombre es Erickson Vergara   ";
+        System.out.println(cadenaConEspacioEnBlanco.strip());
+        
+        //convertir todos los caracteres a minúsculas
+        System.out.println("HOLA DEV!".toLowerCase());
+        
+        //Convertir todods los caracteres a mayusculas
+        System.out.println("hola dev!".toUpperCase());
+        
+        //Usar valueOf(long) para convertir diferentes valores númericos a string.
+        int numero = 103;
+        String numeroConvertidoAString = String.valueOf(numero);
+        System.out.println("El número convertido ahora es así: " + (numeroConvertidoAString + 10));
+                
+        
     }
 }
