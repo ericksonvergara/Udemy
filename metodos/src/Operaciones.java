@@ -13,10 +13,10 @@ import java.util.Scanner;
 public class Operaciones {
     //int numero1;
     //int numero2;
-    int sumar;
-    int restar;
-    int multiplicar;
-    int dividir;
+    //int sumar;
+    //int restar;
+    //int multiplicar;
+    //int dividir;
  
     /**
     public void leerNumeros(){
@@ -124,4 +124,31 @@ public class Operaciones {
         int dividir = numero1 / numero2;
         return dividir;
     }
+    
+    public void imprimirResultados(int suma, int resta, int multiplicacion, int division){
+        System.out.println("El resultado de la suma es: " + suma);
+        System.out.println("El resultado de la resta es: " + resta);
+        System.out.println("El resultado de la multiplicacion es : " + multiplicacion);
+        System.out.println("El resultado de la division es: " + division);
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese el primer número: ");
+        int n1 = sc.nextInt();
+        System.out.println("Ingrese el segundo número: ");
+        int n2 = sc.nextInt();
+        
+        Operaciones op = new Operaciones();
+        int suma = op.sumar(n1, n2);
+        int resta = op.restar(n1, n2);
+        int multiplicacion = op.multiplicar(n1, n2);
+        int division = op.dividir(n1, n2);
+        
+        op.imprimirResultados(suma, resta, multiplicacion, division);      
+    }
+    
+   
+    
+    
 }
