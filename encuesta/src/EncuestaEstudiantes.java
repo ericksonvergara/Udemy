@@ -20,7 +20,7 @@ public class EncuestaEstudiantes {
     public static void main(String[] args) {
         
         //Arreglo de respuestas de estudiantes (lo mas comun es que se introducen en tiempo de ejecución)
-        int [] respuestas = {1, 2, 5, 4, 3, 5, 2, 1, 3, 3, 1, 4, 3, 3, 3, 2, 3, 3, 2/*, 14*/};
+        int [] respuestas = {1, 2, 5, 4, 3, 5, 2, 1, 3, 3, 1, 4, 3, 3, 3, 2, 3, 3, 2, 14};
         
         //Arreglo de contadores de frecuencia
         int [] frecuencia = new int [6];
