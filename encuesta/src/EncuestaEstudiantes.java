@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -17,7 +20,7 @@ public class EncuestaEstudiantes {
     public static void main(String[] args) {
         
         //Arreglo de respuestas de estudiantes (lo mas comun es que se introducen en tiempo de ejecución)
-        int [] respuestas = {1, 2, 5, 4, 3, 5, 2, 1, 3, 3, 1, 4, 3, 3, 3, 2, 3, 3, 2, 14};
+        int [] respuestas = {1, 2, 5, 4, 3, 5, 2, 1, 3, 3, 1, 4, 3, 3, 3, 2, 3, 3, 2/*, 14*/};
         
         //Arreglo de contadores de frecuencia
         int [] frecuencia = new int [6];
@@ -27,8 +30,16 @@ public class EncuestaEstudiantes {
         for (int respuesta = 0; respuesta < respuestas.length; respuesta++) {
             try {
                  frecuencia[ respuestas [respuesta] ] += 1;
-            } catch (Exception e) {
-            }
+            } catch (ArrayIndexOutOfBoundsException e) {
+                JOptionPane.showMessageDialog(null, "Valor incorrecto: " +respuestas[respuesta]);
+            }           
+            
         }
+        
+        System.out.printf("%s %10s\n", "Calificacion", "Frecuencia");
+            
+            for (int calificacion = 1; calificacion < frecuencia.length; calificacion++) {
+                System.out.printf("%6d %10d\n", calificacion, frecuencia[ calificacion ]);
+            }
     }
 }
