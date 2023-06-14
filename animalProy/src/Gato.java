@@ -12,7 +12,7 @@ public class Gato extends Mamifero { // esta clase Gato hereda de la clase Mamif
     public static void main(String[] args) {
         Gato g = new Gato();// Creamos una clase gato
         System.out.println("El gato es: " + g);// Imprimimos el Objeto
-        Mamifero m = g;//realñizamos un upcasting 
+        Mamifero m = g;//realizamos un upcasting 
         System.out.println("El Mamifero es: " + m);//imprimimos el objeto mamifero
 
 //        Mamifero m = new Gato();
@@ -22,7 +22,7 @@ public class Gato extends Mamifero { // esta clase Gato hereda de la clase Mamif
 
         if (a instanceof Gato) {
             System.out.println("Puedes hacer la conversion con toda confianza");
-            Gato g12= (Gato)a;
+            Gato g2= (Gato)a;
         }
 
     }
