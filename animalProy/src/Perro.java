@@ -8,5 +8,7 @@
  * @author erickson.vergara
  */
 public class Perro extends Mamifero{
-    
+    public Perro(){
+        System.out.println("Constructor de Perro");
+    }
 }

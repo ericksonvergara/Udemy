@@ -8,5 +8,12 @@
  * @author erickson.vergara
  */
 public class Animal {
+    String nombre;
+    public Animal(String args){
+        //nombre = nom;
+    }
+//    public Animal(){
+//            System.out.println("Constructor de Animal");
+//}
 
 }

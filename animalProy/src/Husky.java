@@ -13,4 +13,8 @@ public class Husky extends Perro{
         System.out.println("Constructor de Husky");
     }
     
+    public static void main(String[] args) {
+        Husky amigo = new Husky();
+    }
+    
 }

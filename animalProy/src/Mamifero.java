@@ -8,5 +8,8 @@
  * @author erickson.vergara
  */
 public class Mamifero extends Animal{
-    
+    public Mamifero(){
+        super("Nombre");
+        System.out.println("Constructor de Mamifero");
+    }
 }
