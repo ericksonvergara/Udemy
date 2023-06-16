@@ -14,7 +14,7 @@ public class Husky extends Perro{
     }
     
     public static void main(String[] args) {
-        Husky amigo = new Husky();
+        Husky amigo = new Husky(); //Instancia de la clase Husky
     }
     
 }
