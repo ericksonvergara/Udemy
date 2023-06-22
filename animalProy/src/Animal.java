@@ -9,7 +9,7 @@
  */
 public class Animal {
     String nombre;
-    public Animal(String args){
+    public Animal(String nom){
         //nombre = nom;
     }
 //    public Animal(){
