@@ -4,12 +4,16 @@
  */
 package com.noskcire.gui;
 
+import com.noskcire.graphicsObjects.Zoombie;
 import com.noskcire.graphicsObjects.Graphic;
 import com.noskcire.graphicsObjects.GreenBullet;
 import com.noskcire.graphicsObjects.SilverBullet;
 import java.awt.Color;
+import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.TimerTask;
 import javax.swing.JPanel;
+import java.util.Timer;
 
 /**
  *
@@ -24,8 +28,8 @@ public class VisualManager extends JPanel {
         setBackground(Color.WHITE);
 
         graphicList = new ArrayList<Graphic>();
-        
-        graphicList.add(new Zoombie(900, 100));
+
+        graphicList.add(new Zoombie(900, 10));
         graphicList.add(new Zoombie(850, 100));
         graphicList.add(new Zoombie(800, 200));
         graphicList.add(new Zoombie(910, 300));
@@ -53,7 +57,31 @@ public class VisualManager extends JPanel {
         graphicList.add(new GreenBullet(16, 800));
         graphicList.add(new SilverBullet(1, 852));
         graphicList.add(new SilverBullet(15, 900));
-        
-    }
 
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                moveGraphics();
+                repaint();
+            }
+        };
+        
+        Timer timer = new Timer();
+        timer.schedule(timerTask, 0, 1000);
+    }
+    
+    @Override
+    protected void paintComponent(Graphics g){
+        super.paintComponent(g);
+        
+        for(Graphic graphic : graphicList){
+            graphic.draw(g);
+        }
+    }
+    
+    public void moveGraphics(){
+        for(Graphic g : graphicList){
+            g.move();
+        }
+    }
 }
