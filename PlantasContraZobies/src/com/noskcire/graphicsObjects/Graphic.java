@@ -29,7 +29,7 @@ public class Graphic {
         xCoord -= 10;
     }
     
-    public void draw(Graphics g){ 
+    public void draw(Graphics g){ //Metodo que dibuja la imagen
         Graphics2D g2 = (Graphics2D)g;
         if(imgGraphic != null){
             g2.drawImage(imgGraphic, xCoord, yCoord, 80, 100, null);
