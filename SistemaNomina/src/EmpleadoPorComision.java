@@ -14,7 +14,7 @@ public class EmpleadoPorComision extends Empleado{
     
     public EmpleadoPorComision(String nombre, String apellido, String nss, double ventas, double tarifa){
         super(nombre, apellido, nss);
-        establecerVentasBrutras(ventas);
+        establecerVentasBrutas(ventas);
         establecerTarifaComision(tarifa);
     }
     
@@ -30,8 +30,8 @@ public class EmpleadoPorComision extends Empleado{
         return tarifaComision;
     }
     
-    public void establecerVentasBrutras(double ventas){
-        if(ventas > 0.0){
+    public void establecerVentasBrutas(double ventas){
+        if(ventas < 0.0){
             ventasBrutas = 0.0;
         }else{
             ventasBrutas = ventas;
@@ -47,7 +47,7 @@ public class EmpleadoPorComision extends Empleado{
     }
     
     public String toString(){
-        return String.format("%s: %s\n%s: $%, .2f; %s: %.2f", "empleado por comisión", super.toString(), "ventas brutas", obtenerVentasBrutas(), 
+        return String.format("%s: %s\n%s: $%,.2f; %s: %.2f", "empleado por comisión", super.toString(), "ventas brutas", obtenerVentasBrutas(), 
                 "tarifa de comision", obtenerTarifaComision());
     }
 }

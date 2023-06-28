@@ -31,6 +31,6 @@ public EmpleadoAsalariado(String nombre, String apellido, String nss, double sal
     }
     
     public String toString(){
-        return String.format("Empleado asalariado: $s\n$s: $s,.2f", super.toString(), "Salario Semanal", obtenerSalarioSemanal());
+        return String.format("Empleado asalariado: %s\n%s: $%,.2f", super.toString(), "Salario Semanal", obtenerSalarioSemanal());
     }
 }
