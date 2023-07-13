@@ -28,7 +28,8 @@ public class Botones extends JFrame{
         add(boton);        
         setSize(400, 400);
         setLayout(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //Se usa para que al cerrar la ventana se detenga la ejecucuión
+        
         setVisible(true);
     }
     
