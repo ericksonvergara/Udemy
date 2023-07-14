@@ -100,7 +100,7 @@ public class Tablas extends JFrame {
     }
 
     public static void main(String[] args) {
-        Tablas obj = new Tablas();
+        Tablas obj = new Tablas(); 
     }
 
 }
