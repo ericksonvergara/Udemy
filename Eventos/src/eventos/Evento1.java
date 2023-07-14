@@ -6,6 +6,8 @@ package eventos;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -24,8 +26,15 @@ public class Evento1 extends JFrame {
 
     public Evento1() {
         
-        JLabel lblMovedx = new JLabel("Moved x: ");
-        lblMovedx.setBounds(25, 10, 100, 30);
+        JLabel lblMovedX = new JLabel("Moved x: ");
+        lblMovedX.setBounds(25, 50, 100, 30);
+        JLabel lblMovedY = new JLabel("y: ");
+        lblMovedY.setBounds(230, 50, 100, 30);
+        
+        JLabel lblDraggedX = new JLabel("Dragged x: ");
+        lblDraggedX.setBounds(25, 70, 100, 30);
+        JLabel lblDraggedY = new JLabel("y: ");
+        lblDraggedY.setBounds(230, 70, 100, 30);
         
         
         JLabel lblSaludo = new JLabel();
@@ -130,24 +139,59 @@ public class Evento1 extends JFrame {
         MouseMotionListener motionListener = new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e) {
+                lblDraggedX.setText("Dragged X: " + e.getX());
+                lblDraggedY.setText("y: " + e.getY());
                 System.out.println("draged");
             }
 
             @Override
             public void mouseMoved(MouseEvent e) {
+                lblMovedX.setText("Moved x: " + e.getX());
+                lblMovedY.setText("y: " + e.getY());
                 System.out.println("moved");
+            }
+        };
+        
+        KeyListener kl = new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                System.out.println("keyTyped");   
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode() == KeyEvent.VK_ENTER){
+                    System.out.println("Has presionado enter");
+                }if(e.getKeyCode() == KeyEvent.VK_F1){
+                    System.out.println("F1");
+                }if(e.getKeyCode() == KeyEvent.VK_A){
+                    System.out.println("Presionaste la tecla A");
+                }
+                System.out.println("keyPressed");
+            }
+         
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                System.out.println("keyrelesed");   
             }
         };
                 
                 boton.addMouseListener(mListener);
                 campoSaludo.addMouseListener(mListener);
                 campoSaludo.addMouseWheelListener(whell);
+                campoSaludo.addKeyListener(kl);
                 this.addMouseMotionListener(motionListener);
 
+        add(lblMovedX);
+        add(lblMovedY);
+        add(lblDraggedX);
+        add(lblDraggedY);
         add(lblSaludo);
         add(lblInstruccion);
         add(campoSaludo);
         add(boton);
+        
         setSize(500, 500);
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
